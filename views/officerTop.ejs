@@ -1,0 +1,33 @@
+<%- include('partials/indexTop.ejs') %>
+<style>
+    .activeOfficer {
+        background: linear-gradient(45deg,rgb(110, 177, 93),rgb(120, 196, 101));
+    }
+    .activeOfficer::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 70%;
+        background: rgb(79, 133, 66);
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 16px 0 0 16px;
+        display: block;
+    }
+    .activeOfficer a {
+        color: rgba(255, 255, 255, 0.61);
+    }
+    </style>
+
+<p class="pageTitle"><i class="fas fa-users pdspace"></i> Officer</p>
+<p class="aboutPage">Informations about the officers are uploaded here.</p>
+
+<div class="contentMainBox">
+    <div class="contentOptionBox">
+        <a href="/officer" class="contentOptions activeOfficerAllDetails">Officers</a>
+        <a href="/addDepartment" class="contentOptions activeAddDepartment">Add Department</a>
+        <a href="/addPosition" class="contentOptions activeAddPosition">Add Position</a>
+        <a href="/addOfficers" class="contentOptions activeAddOfficer">Add Officers</a>
+    </div>
+    <div class="contentDetailsMainBox">

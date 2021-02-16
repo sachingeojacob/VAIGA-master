@@ -1,0 +1,22 @@
+<%- include('officerTop.ejs') %>
+
+<style>
+    .activeAddDepartment {
+        border-bottom: 5px solid rgb(99, 192, 104);
+        font-weight: 600;
+        color: rgb(134, 134, 134);
+    }
+</style>
+
+<form action="/addDepartment" method="post" class="addCategoryBox">
+
+    <div class="inputBox">
+        <label for="" class="cat">Area of Department</label>
+        <input type="text" name="deptName" required class="input-box" placeholder="eg: Kunjithanni Idukki">
+    </div>
+
+    <button class="save-button"><i class="fas fa-save pdspace"></i>SAVE DATA</button>
+    <!-- <p class="error-message pdspace"><i class="fas fa-exclamation-triangle"></i> You need to fill all the fields</p> -->
+</form>
+
+<%- include('officerBottom.ejs') %>

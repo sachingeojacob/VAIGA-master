@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpicyJet</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+    <!-- <script defer src="css/fontawesome-free-5.0.9/svg-with-js/js/fontawesome-all.js"></script> -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="leftSide">
+            <p class="siteTitle"><a href="/" style="color: #333;"><i style="font-style: italic;color: rgb(124, 199, 106);" class="fab fa-buysellads pdspace"></i> spicyTech</a></p>
+
+            <div class="menuBox">
+                <div class="eachMenuBox activeAnalytic">
+                    <a href="/analytic" class="menus">
+                        <i class="fas fa-chart-line"></i>
+                        Analytics
+                    </a>
+                </div>
+                <div class="eachMenuBox activeDiseases">
+                    <a href="/diseases" class="menus">
+                        <i class="fas fa-virus"></i>
+                        Diseases
+                    </a>
+                </div>
+                <div class="eachMenuBox activeConcerns">
+                    <a href="concerns" class="menus">
+                        <i class="fas fa-greater-than-equal"></i>
+                        Concerns
+                    </a>
+                </div>
+                <div class="eachMenuBox activeOfficer">
+                    <a href="/officer" class="menus">
+                        <i class="fas fa-users"></i>
+                        Officers
+                    </a>
+                </div>
+            </div>
+
+            <div class="officerBox">
+                    <div class="imageBox">
+                        <img src="images/defaultImage.jpg" alt="">
+                    </div>
+                    <div class="aboutBox">
+                        <p> <%= user.name %></p>
+                        <p><%= user.position.name %> </p>
+                    </div>
+                    <a href="/login" class="sign-out">Logout</a>
+            </div>
+
+        </div>
+        <div class="rightSide">
+            

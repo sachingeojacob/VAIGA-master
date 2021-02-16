@@ -1,0 +1,83 @@
+<%- include('analyticTop.ejs') %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+<style>
+.activePlaces {
+    border-bottom: 5px solid rgb(99, 192, 104);
+    font-weight: 600;
+    color: rgb(134, 134, 134);
+}
+</style>
+
+<div class="graphAreaBox">
+    <canvas id="myChart"></canvas>
+</div>
+
+<script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    // Global Options
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#777';
+
+    let massPopChart = new Chart(myChart, {
+      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:['Kottayam', 'Idukki', 'Alappuzha', 'Kozhikkodu', 'Trivandrum', 'Kollam'],
+        datasets:[{
+          label:'District',
+          data:[
+            617594,
+            181045,
+            153060,
+            106519,
+            105162,
+            95072
+          ],
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(141, 211, 123, 0.267)',
+            'rgba(141, 211, 123, 0.267)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
+            'rgba(255, 159, 64, 0.6)',
+            'rgba(255, 99, 132, 0.6)'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#fff'
+        }]
+      },
+      options:{
+        title:{
+          display:true,
+          text:'Collected Data by Place',
+          fontSize:25
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
+  </script>
+
+<%- include('analyticBottom.ejs') %>

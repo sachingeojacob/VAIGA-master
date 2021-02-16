@@ -1,0 +1,39 @@
+<%- include('diseasesTop.ejs') %>
+<style>
+.activeDiseasesAddDiseases {
+    border-bottom: 5px solid rgb(99, 192, 104);
+    font-weight: 600;
+    color: rgb(134, 134, 134);
+}
+</style>
+
+<form action="/addDiseases" method="post" class="addCategoryBox">
+    <div class="inputBox">
+        <label for="" class="cat">Diseases Name</label>
+        <input type="text" name="dname"  required class="input-box">
+    </div>
+    <div class="inputBox">
+        <label for="" class="cat">Plant Category</label>
+        <select name="category" id="" required>
+            <option value="" selected disabled>CHOOSE CATEGORY</option>
+            <% if(typeof(resp) != 'undefined') { %>
+            <% resp.forEach(function(res) { %>
+                <option value=<%= res._id %>><%= res.name %></option>
+            <% }) %>
+            <% } %>
+        </select>
+    </div>
+    <div class="inputBox">
+        <label for="" class="cat">Remedies</label>
+        <textarea name="remedies" id="" cols="30" rows="10" required></textarea>
+    </div>  
+    <div class="inputBox">
+        <label for="" class="cat">Youtube Link</label>
+        <input type="text" name="youtubelinks" class="input-box" required>
+    </div>
+    <button class="save-button"><i class="fas fa-save pdspace"></i>SAVE DATA</button>
+    
+</form>
+
+
+<%- include('diseasedBottom.ejs') %>

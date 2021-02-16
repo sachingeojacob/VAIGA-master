@@ -1,0 +1,62 @@
+<%- include('partials/indexTop.ejs') %>
+<style>
+    .activeConcerns {
+        background: linear-gradient(45deg,rgb(110, 177, 93),rgb(120, 196, 101));
+    }
+    .activeConcerns::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 70%;
+        background: rgb(79, 133, 66);
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 16px 0 0 16px;
+        display: block;
+    }
+    .activeConcerns a {
+        color: rgba(255, 255, 255, 0.61);
+    }
+    </style>
+
+<p class="pageTitle"><i class="fas fa-greater-than-equal pdspace"></i> Concerns</p>
+<p class="aboutPage">Here officers can see all the concerns send by the farmers.</p>
+
+<form class="sortConcerns">
+    <select name="" id="sortConcerns">
+        <option value="">Kottayam</option>
+        <option value="">Idukki</option>
+        <option value="">Kollam</option>
+    </select>
+    <button><i class="fas fa-filter"></i> Filter</button>
+</form>
+
+<table class="dataTable">
+    <tr>
+        <th></th>
+        <th style="width: 50px;">Picture</th>
+        <th>Diseases</th>
+        <th>Farmer Name</th>
+        <th>Location</th>
+        <th>Phone</th>
+        <th>Document</th>
+        <th>Respond</th>
+        <th style="width: 50px;">Share</th>
+    </tr>
+    <tr>
+        <th></th>
+        <td><div class="concernImageBox">
+            <a href="images/mosaic.jpg"><img src="images/mosaic.jpg" alt=""></a>
+        </div></td>
+        <td>Mosaic</td>
+        <td>Kuttappan</td>
+        <td>Idukki</td>
+        <td>+91-9489348923</td>
+        <td><a href="#" style="padding: 2px 8px;background: tomato;color: #fff;border-radius: 3px;" >Pdf</a></td>
+        <td><form action="" method="post" style="display: flex;"><input type="text" /> <button class="respondButton" >SEND</button></form></td>
+        <td style="width: 50px;"><a href="#" style="font-size: 20px;"><i class="fas fa-share-alt-square"></i></a></td>
+    </tr>
+</table>
+
+<%- include('partials/indexBottom.ejs') %>

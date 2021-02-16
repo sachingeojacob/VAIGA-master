@@ -1,0 +1,68 @@
+<%- include('officerTop.ejs') %>
+
+<style>
+    .activeAddOfficer {
+        border-bottom: 5px solid rgb(99, 192, 104);
+        font-weight: 600;
+        color: rgb(134, 134, 134);
+    }
+</style>
+
+<form action="/addOfficers" method="post" class="addCategoryBox">
+
+    <div class="inputBox">
+        <label for="" class="cat">Name</label>
+        <input type="text" name="officerName" class="input-box" required>
+    </div>
+
+    <div class="inputBox">
+        <label for="" class="cat">Username</label>
+        <input type="text" name="username" class="input-box" required>
+    </div>
+
+    <div class="inputBox">
+        <label for="" class="cat">Password</label>
+        <input type="password" name="password" class="input-box" required>
+    </div>
+
+    <div class="inputBox">
+        <label for="" class="cat">Department</label>
+        <select name="department" id="" required>
+            <option value="" selected disabled>CHOOSE CATEGORY</option>
+            <% if(typeof(resp) != 'undefined') { %>
+                <% resp.forEach(function(res) { %>
+                    <option value=<%= res._id %>><%= res.name %></option>
+                <% }) %>
+                <% } %>
+        </select>
+    </div>
+
+    <div class="inputBox">
+        <label for="" class="cat">Position</label>
+        <select name="position" id="" required>
+            <option value="" selected disabled>CHOOSE CATEGORY</option>
+                <option value="">Dummy</option>
+        </select>
+    </div>
+
+    <div class="inputBox">
+        <label for="" class="cat">Email</label>
+        <input type="text" name="email" class="input-box" required>
+    </div>
+
+    <div class="inputBox">
+        <label for="" class="cat">Mobile</label>
+        <input type="text" name="mobile" class="input-box" required>
+    </div>
+
+    <div class="inputBox">
+        <label for="" class="cat">Officer Profile Pic</label>
+        <input type="file" name="proPic" class="input-box" style="border: none;" required>
+    </div>
+
+
+    <button class="save-button" type="submit"><i class="fas fa-save pdspace"></i>SAVE DATA</button>
+    <!-- <p class="error-message pdspace"><i class="fas fa-exclamation-triangle"></i> You need to fill all the fields</p> -->
+</form>
+
+<%- include('officerBottom.ejs') %>

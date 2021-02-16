@@ -1,0 +1,31 @@
+<%- include('partials/indexTop.ejs') %>
+<style>
+    .activeAnalytic {
+        background: linear-gradient(45deg,rgb(110, 177, 93),rgb(120, 196, 101));
+    }
+    .activeAnalytic::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 70%;
+        background: rgb(79, 133, 66);
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 16px 0 0 16px;
+        display: block;
+    }
+    .activeAnalytic a {
+        color: rgba(255, 255, 255, 0.61);
+    }
+    </style>
+
+<p class="pageTitle"><i class="fas fa-chart-line pdspace"></i> Analytics</p>
+<p class="aboutPage">Visual Representation of major parts of the application.</p>
+
+<div class="contentMainBox">
+    <div class="contentOptionBox">
+        <a href="/analytic" class="contentOptions activePlaces">Place</a>
+        <a href="/analyticMonths" class="contentOptions activeMonths">Months</a>
+    </div>
+    <div class="contentDetailsMainBox">

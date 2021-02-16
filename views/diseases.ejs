@@ -1,0 +1,35 @@
+<%- include('diseasesTop.ejs') %>
+<style>
+.activeDiseasesPlantCategory {
+    border-bottom: 5px solid rgb(99, 192, 104);
+    font-weight: 600;
+    color: rgb(134, 134, 134);
+}
+</style>
+
+<div class="allPlantsDetailsBox">
+    <% if(typeof(resp) != 'undefined') { %>
+        <% resp.forEach(function(res) { %>
+    <div class="eachPlantBox">
+        <div class="plantImagesBox">
+            <img src=<%= res.category.image%> alt="tomato" class="categoryImagePlant">
+        </div>
+        <div class="plantDetailsBox">
+            <h3 class="plantName"><%= res.name %></h3>
+
+            <p class="diseaseAndRemedyTitle"><%= res.category.name %></p>
+                <div class="diseasesAndRemedyBox">
+                    <details class="diseasesDetails">
+                        <summary>Remedies</summary>
+                        <p style="padding: 16px;"><i class="fas fa-caret-right pdspace" style="color: rgb(91, 136, 235);"></i> <%= res.remedies %></p>
+                        <a href=<%= res.youtubelinks %>><i class="fab fa-youtube"></i> <%= res.youtubelinks %></a>
+                    </details>
+                </div>
+
+        </div>
+    </div>
+    <% }) %>
+    <% } %>
+</div>
+
+<%- include('diseasedBottom.ejs') %>

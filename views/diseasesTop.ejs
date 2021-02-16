@@ -1,0 +1,33 @@
+<%- include('partials/indexTop.ejs') %>
+
+<style>
+.activeDiseases {
+    background: linear-gradient(45deg,rgb(110, 177, 93),rgb(120, 196, 101));
+}
+.activeDiseases::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 70%;
+    background: rgb(79, 133, 66);
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 16px 0 0 16px;
+    display: block;
+}
+.activeDiseases a {
+    color: rgba(255, 255, 255, 0.61);
+}
+</style>
+
+<p class="pageTitle"><i class="fas fa-virus pdspace"></i> Diseases</p>
+<p class="aboutPage">This section is to provide the available plant diseases with remedies and their suggestions.</p>
+
+<div class="contentMainBox">
+    <div class="contentOptionBox">
+        <a href="/diseases" class="contentOptions activeDiseasesPlantCategory">Diseases</a>
+        <a href="/addCategory" class="contentOptions activeDiseasesAddCategory">Add Category</a>
+        <a href="/addDiseases" class="contentOptions activeDiseasesAddDiseases">Add Diseases</a>
+    </div>
+    <div class="contentDetailsMainBox">

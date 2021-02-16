@@ -1,0 +1,34 @@
+<%- include('officerTop.ejs') %>
+
+<style>
+    .activeAddPosition {
+        border-bottom: 5px solid rgb(99, 192, 104);
+        font-weight: 600;
+        color: rgb(134, 134, 134);
+    }
+</style>
+
+<form action="/addPosition" method="post" class="addCategoryBox">
+
+    <div class="inputBox">
+        <label for="" class="cat">Department</label>
+        <select name="departmentId" required>
+            <option value="" selected disabled>CHOOSE CATEGORY</option>
+            <% if(typeof(resp) != 'undefined') { %>
+                <% resp.forEach(function(res) { %>
+                    <option value=<%= res._id %>><%= res.name %></option>
+                <% }) %>
+                <% } %>
+        </select>
+    </div>
+
+    <div class="inputBox">
+        <label for="" class="cat">Position Name</label>
+        <input type="text" name="posName" class="input-box" placeholder="eg: Head Officer">
+    </div>
+
+    <button class="save-button" type="submit"><i class="fas fa-save pdspace"></i>SAVE DATA</button>
+    <!-- <p class="error-message pdspace"><i class="fas fa-exclamation-triangle"></i> You need to fill all the fields</p> -->
+</form>
+
+<%- include('officerBottom.ejs') %>
